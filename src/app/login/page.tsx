@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { useLogin } from './useLogin';
+import { useLogin } from '../hooks/useLogin';
 
 export const LoginPage = () => {
     const { email, setEmail, password, setPassword, error, loginSuccess, handleLogin } = useLogin();
@@ -29,7 +29,7 @@ export const LoginPage = () => {
                                     className="bg-white border text-gray-900 rounded-lg block w-full p-2.5 focus:outline-none"
                                     placeholder="Introduce tu email"
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={(event) => setEmail(event.target.value)}
                                     required
                                 />
                             </div>
@@ -42,7 +42,7 @@ export const LoginPage = () => {
                                         placeholder="Introduce tu contraseña"
                                         className="bg-white border text-gray-900 rounded-lg block w-full p-2.5 pr-10"
                                         value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
+                                        onChange={(event) => setPassword(event.target.value)}
                                         required
                                     />
                                     <button

@@ -10,8 +10,8 @@ export function useLogin() {
     const [loginSuccess, setLoginSuccess] = useState(false);
     const router = useRouter();
 
-    const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleLogin = async (event: React.FormEvent) => {
+        event.preventDefault();
         setError('');
         setLoginSuccess(false);
 
@@ -28,6 +28,7 @@ export function useLogin() {
                 const data = await response.json();
                 const token = data.token;
                 localStorage.setItem('authToken', token);
+                console.log('Inicio de sesión exitoso:', data);
                 setLoginSuccess(true);
 
                 setTimeout(() => {
