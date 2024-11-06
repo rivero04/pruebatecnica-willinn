@@ -20,7 +20,7 @@ Este proyecto es una prueba técnica para la posición de trainee en Willinn. In
 
 git clone https://github.com/rivero04/pruebatecnica-willinn
 ```
-##Cambia al directorio del proyecto:
+## Cambia al directorio del proyecto:
 ```bash
 
 cd pruebatecnica-willinn
