@@ -1,13 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { User } from './types';
 
-type User = {
-    id: number;
-    name: string;
-    email: string;
-    isActive: boolean;
-}
 
 const useFetchUsers = () => {
     const [users, setUsers] = useState<User[]>([]);
