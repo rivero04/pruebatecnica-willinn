@@ -4,39 +4,40 @@ Este proyecto es una prueba técnica para la posición de trainee en Willinn. In
 
 ## Características Implementadas
 
-- Visualización de Usuarios\*\*: Muestra una lista de usuarios en una tabla con sus detalles (nombre, apellido, correo).
-- Creación de Usuarios\*\*: Permite agregar un nuevo usuario a la lista mediante un formulario que incluye campos para nombre, apellido, correo electrónico, contraseña y un toggle de activación.
+- Visualización de Usuarios: Muestra una lista de usuarios en una tabla con sus detalles (nombre, apellido, correo).
+- Creación de Usuarios: Permite agregar un nuevo usuario a la lista mediante un formulario que incluye campos para nombre, apellido, correo electrónico, contraseña y un toggle de activación.
 
 ## Funcionalidades Pendientes
 
-- Eliminación de Usuarios\*\*: La funcionalidad de eliminación de usuarios está parcialmente implementada. Aunque se realiza la solicitud a la API para eliminar el usuario, la lista de usuarios en la tabla no se actualiza automáticamente después de la eliminación.
-- Edición de Usuarios\*\*: La funcionalidad para editar usuarios no está implementada.
+- Eliminación de Usuarios: La funcionalidad de eliminación de usuarios está parcialmente implementada. Aunque se realiza la solicitud a la API para eliminar el usuario, la lista de usuarios en la tabla no se actualiza automáticamente después de la eliminación.
+- Edición de Usuarios: La funcionalidad para editar usuarios no está implementada.
 
 ## Cómo Ejecutar el Proyecto
 
 ## Clona este repositorio.
 
-\```bash
+```bash
 
 git clone https://github.com/rivero04/pruebatecnica-willinn
-
+```
 ##Cambia al directorio del proyecto:
-
-\```bash
+```bash
 
 cd pruebatecnica-willinn
-
+```
 ## Instala las dependencias:
 
-\```bash
+```bash
 
 npm install
+```
 
 ## Inicia la aplicación en modo de desarrollo:
 
-\```bash
+```bash
 
 npm run dev
+```
 
 ## La aplicación estará disponible en http://localhost:3000.
 
