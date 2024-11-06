@@ -8,6 +8,8 @@ import Table from './table';
 import { User } from '../hooks/types';
 
 const AdminPanel = () => {
+
+
     const handleUserAdded = (newUser: User) => {
         console.log("Nuevo usuario agregado:", newUser);
     };
@@ -18,8 +20,8 @@ const AdminPanel = () => {
                 <Image src={logo.src} alt="Logo Willinn" width={100} height={100} className="w-24 mx-auto mb-8" />
                 <nav className="space-y-6">
                     <div className="flex items-center text-pink-600">
-                        <FaHome className="mr-3" />
-                        <span>Inicio</span>
+                        <FaHome className="mr-3 text-[#64748b]" />
+                        <span className="font-bold  text-[#64748b] hover:text-black">Inicio</span>
                     </div>
                     <div className="flex items-center text-pink-600 font-bold">
                         <FaUser className="mr-3" />
@@ -32,7 +34,7 @@ const AdminPanel = () => {
                 <div className="flex-1 p-6 rounded-lg">
                     <Table />
                 </div>
-                <div className="w-1/3 p-6 rounded-lg">
+                <div className=" w-1/3 flex items-center justify-center min-h-screen">
                     <CreateUser onUserAdded={handleUserAdded} />
                 </div>
             </div>

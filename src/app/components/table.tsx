@@ -1,10 +1,49 @@
 import { FaSearch, FaEllipsisH, FaPen, FaTrashAlt } from 'react-icons/fa';
 import useFetchUsers from '../hooks/fetchusers';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Table = () => {
-    const { users, loading, error } = useFetchUsers();
+    const { users, loading, error, fetchUsers } = useFetchUsers();
     const [activeUser, setActiveUser] = useState<number | null>(null);
+
+    useEffect(() => {
+        fetchUsers();
+    }, [fetchUsers]);
+
+    const handleEdit = (userId: number) => {
+        // logica para editar usuario
+        console.log("Editar usuario con ID:", userId);
+    };
+
+    // no se me elimina el usuario del server, se acutaliza la tabla pero sigue estando el usuario eliminado.
+    const handleDelete = async (userId: number) => {
+        console.log("ID del usuario a eliminar:", userId);
+        try {
+            const response = await fetch(`https://uat.zonamerica.com:5009/users/${userId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+                }
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error al eliminar el usuario:', errorData);
+                return;
+            }
+    
+            console.log("Usuario eliminado con éxito:", userId);
+            fetchUsers();
+    
+        } catch (error) {
+            console.error("Error de red al intentar eliminar el usuario:", error);
+        }
+    };
+
+    const toggleIcons = (userId: number) => {
+        setActiveUser(activeUser === userId ? null : userId);
+    };
 
     if (error) {
         return <p>Error: {error}</p>;
@@ -13,23 +52,9 @@ const Table = () => {
         return <p className="text-xl font-semibold text-black">Cargando...</p>;
     }
 
-    const handleEdit = (userId: number) => {
-        // Lógica para editar usuario
-        console.log("Editar usuario con ID:", userId);
-    };
-
-    const handleDelete = (userId: number) => {
-        // Lógica para eliminar usuario
-        console.log("Eliminar usuario con ID:", userId);
-    };
-
-    const toggleIcons = (userId: number) => {
-        setActiveUser(activeUser === userId ? null : userId);
-    };
-
     return (
         <main className="h-full flex-grow p-8">
-            <h1 className="text-3xl font-bold text-black mb-8"> Lista de Usuarios</h1>
+            <h1 className="text-3xl font-bold text-black mb-8">Lista de Usuarios</h1>
             <div className="flex space-x-8">
                 <div className="flex-1 bg-white p-6 rounded-lg shadow-lg">
                     <div className="flex justify-between items-center mb-4">
