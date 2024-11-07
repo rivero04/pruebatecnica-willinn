@@ -41,6 +41,20 @@ npm run dev
 
 ## La aplicación estará disponible en http://localhost:3000.
 
+## Configuración con Docker y Docker Compose
+Si prefieres ejecutar el proyecto usando Docker, sigue los siguientes pasos:
+
+# Construir y levantar el contenedor con Docker Compose:
+Asegúrate de tener Docker y Docker Compose instalados en tu sistema.
+En la raíz del proyecto, se encuentra un archivo docker-compose.yml. Para construir y ejecutar el contenedor, usa el siguiente comando:
+```bash
+docker-compose up --build
+```
+Esto construirá y levantará el contenedor para el frontend, configurando el puerto 3000 para que puedas acceder a la aplicación en http://localhost:3000.
+
+Descripción del archivo docker-compose.yml:
+Este archivo contiene la configuración para levantar el contenedor del frontend de forma independiente, sin necesidad de levantar el backend o la base de datos. Utiliza un archivo Dockerfile para construir la imagen del contenedor.
+
 # Tecnologías Utilizadas
 
 Next.js
@@ -48,3 +62,7 @@ Next.js
 React
 
 TypeScript
+
+Docker
+
+Docker Compose
