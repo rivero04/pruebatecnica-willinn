@@ -41,10 +41,10 @@ npm run dev
 
 ## La aplicación estará disponible en http://localhost:3000.
 
-## Configuración con Docker y Docker Compose
+# Configuración con Docker y Docker Compose
 Si prefieres ejecutar el proyecto usando Docker, sigue los siguientes pasos:
 
-# Construir y levantar el contenedor con Docker Compose:
+## Construir y levantar el contenedor con Docker Compose:
 Asegúrate de tener Docker y Docker Compose instalados en tu sistema.
 En la raíz del proyecto, se encuentra un archivo docker-compose.yml. Para construir y ejecutar el contenedor, usa el siguiente comando:
 ```bash
