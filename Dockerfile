@@ -4,7 +4,7 @@ FROM node:18 AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
-COPY . .
+COPY . ./
 
 RUN npm run build
 
@@ -12,6 +12,8 @@ RUN npm run build
 FROM node:18 AS production
 WORKDIR /app
 COPY --from=builder /app ./
+
+# Dependencias de producción
 RUN npm install --production
 
 EXPOSE 3000
