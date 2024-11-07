@@ -6,7 +6,7 @@ import { useLogin } from '../hooks/useLogin';
 import Image from 'next/image';
 import logo from '../assets/logo.png';
 
-export const LoginPage = () => {
+const LoginPage = () => {
     const { email, setEmail, password, setPassword, error, loginSuccess, handleLogin } = useLogin();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -17,7 +17,7 @@ export const LoginPage = () => {
     return (
         <section className="bg-[#F5F7FA]">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto min-h-screen">
-                        <Image src={logo} alt="Logo" className="mx-auto mb-4" width={150} height={200} />
+                <Image src={logo} alt="Logo" className="mx-auto mb-4" width={150} height={200} />
                 <div className="w-full bg-white rounded-lg sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl text-center font-bold text-gray-900 md:text-2xl">
@@ -77,3 +77,5 @@ export const LoginPage = () => {
         </section>
     );
 };
+
+export default LoginPage;
